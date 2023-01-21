@@ -54,12 +54,16 @@
   
     
     
+      
+    
     
     
     
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
   
     
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -108,6 +112,26 @@
         </div>
       </div>
     </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
     
     
     
@@ -186,7 +210,7 @@
 
   <li class="md-tabs__item">
     <a href="explanation/" class="md-tabs__link">
-      Explanation
+      Sample Regex
     </a>
   </li>
 
@@ -198,7 +222,7 @@
 
   <li class="md-tabs__item">
     <a href="reference/" class="md-tabs__link">
-      Reference
+      References
     </a>
   </li>
 
@@ -289,7 +313,7 @@
   
     <li class="md-nav__item">
       <a href="explanation/" class="md-nav__link">
-        Explanation
+        Sample Regex
       </a>
     </li>
   
@@ -304,7 +328,7 @@
   
     <li class="md-nav__item">
       <a href="reference/" class="md-nav__link">
-        Reference
+        References
       </a>
     </li>
   
@@ -355,10 +379,12 @@
 <li><a href="https://github.com/justmars/citation-report">citation-report</a>; and</li>
 <li><a href="https://github.com/justmars/citation-docket">citation-docket</a>.</li>
 </ol>
-<p>These two libraries are intended to parse long-form court decisions and documents that contain Philippine
-Supreme Court citations referencing:</p>
+<p>These two libraries are, in turn, dependencies of <a href="https://github.com/justmars/citation-utils">citation-utils</a>.</p>
+<p>These are intended to parse long-form court decisions and documents that contain Philippine
+Supreme Court citations.</p>
+<p>The citations reference either specific:</p>
 <ol>
-<li>reporters / publishers (e.g. 12 SCRA 141 <code>&lt;date&gt;</code>); and</li>
+<li>reporters / publishers (e.g. 12 SCRA 141 <code>&lt;date&gt;</code>); or</li>
 <li>docket numbers (e.g. GR No. 1434121, <code>&lt;date&gt;</code>).</li>
 </ol>
 <p>The date is used as an anchor to capture the citation, when possible. Some features of this particular package:</p>
