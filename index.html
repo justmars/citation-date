@@ -6,6 +6,9 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="This is a dependency: a regex date formula and decoder for dates referenced in related libraries: citation-report and citation-docket. The latter libraries parse long-form court decisions for Philippine Supreme Court citations.
+">
+      
       
       
       
@@ -69,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#overview" class="md-skip">
+        <a href="#citation-date" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              Citation Date
             
           </span>
         </div>
@@ -120,7 +123,7 @@
           
         
           
-          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="pink"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
           
             <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
@@ -244,12 +247,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Overview
+          Citation Date
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="." class="md-nav__link md-nav__link--active">
-        Overview
+        Citation Date
       </a>
       
         
@@ -322,23 +325,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pattern" class="md-nav__link">
-    Pattern
+  <a href="#regex" class="md-nav__link">
+    Regex
   </a>
   
-    <nav class="md-nav" aria-label="Pattern">
+    <nav class="md-nav" aria-label="Regex">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#constraints" class="md-nav__link">
-    Constraints
+  <a href="#purpose" class="md-nav__link">
+    Purpose
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#regex-docket_date" class="md-nav__link">
-    Regex: docket_date
+  <a href="#docket_date" class="md-nav__link">
+    docket_date
   </a>
   
 </li>
@@ -439,23 +442,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pattern" class="md-nav__link">
-    Pattern
+  <a href="#regex" class="md-nav__link">
+    Regex
   </a>
   
-    <nav class="md-nav" aria-label="Pattern">
+    <nav class="md-nav" aria-label="Regex">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#constraints" class="md-nav__link">
-    Constraints
+  <a href="#purpose" class="md-nav__link">
+    Purpose
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#regex-docket_date" class="md-nav__link">
-    Regex: docket_date
+  <a href="#docket_date" class="md-nav__link">
+    docket_date
   </a>
   
 </li>
@@ -484,18 +487,11 @@
 
 
 
-<h1 id="overview">Overview</h1>
+<h1 id="citation-date">Citation Date</h1>
 <h2 id="concept">Concept</h2>
-<p>This is a dependency: a regex date formula and decoder for dates referenced in related libraries:</p>
-<ol>
-<li><a href="https://github.com/justmars/citation-report">citation-report</a>; and</li>
-<li><a href="https://github.com/justmars/citation-docket">citation-docket</a>.</li>
-</ol>
-<p>These two libraries are, in turn, dependencies of <a href="https://github.com/justmars/citation-utils">citation-utils</a>.</p>
-<p>These are intended to parse long-form court decisions and documents that contain Philippine
-Supreme Court citations.</p>
-<p>This is a separate library to make it easier to test regex strings.</p>
+<p>This is a dependency: a regex date formula and decoder for dates referenced in <a href="https://github.com/justmars/citation-report">citation-report</a>; and <a href="https://github.com/justmars/citation-docket">citation-docket</a>. These two libraries are, in turn, dependencies of <a href="https://github.com/justmars/citation-utils">citation-utils</a>. These are intended to parse long-form court decisions and documents that contain Philippine Supreme Court citations.</p>
 <h2 id="nature-as-dependency">Nature as Dependency</h2>
+<p>This is a separate library to make it easier to test regex strings.</p>
 <h3 id="report">Report</h3>
 <p>e.g <code>Report</code> reporters / publishers (e.g. 12 SCRA 141 <code>&lt;date&gt;</code>)</p>
 
@@ -514,10 +510,10 @@ can be used to fetch matched regex strings</p>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">re</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">report_date</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">I</span> <span class="o">|</span> <span class="n">re</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>  <span class="c1"># note flags</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;1 SCRA 200 (1Dec.  2000)&quot;</span> <span class="c1"># this is what a report looks like</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">match</span> <span class="o">=</span> <span class="n">pattern</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="gp">&gt;&gt;&gt; </span><span class="k">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">&quot;report_date&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">sample_match</span> <span class="o">=</span> <span class="n">pattern</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">sample_match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">&quot;report_date&quot;</span><span class="p">)</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="go">&quot;(1Dec.  2000)&quot;</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">decode_date</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">&quot;report_date&quot;</span><span class="p">))</span> <span class="c1"># use the regex group name</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">decode_date</span><span class="p">(</span><span class="n">sample_match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">&quot;report_date&quot;</span><span class="p">))</span> <span class="c1"># use the regex group name</span>
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="go">&quot;2000-12-01&quot;</span>
 </code></pre></div>
   </div>
@@ -544,10 +540,10 @@ can be used to fetch matched regex strings</p>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">re</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">docket_date</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">I</span> <span class="o">|</span> <span class="n">re</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>  <span class="c1"># note flags</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;G.R. No. 12345, Dec,1,  2000&quot;</span> <span class="c1"># this is what a docket looks like</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">match</span> <span class="o">=</span> <span class="n">pattern</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="gp">&gt;&gt;&gt; </span><span class="k">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">&quot;docket_date&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">sample_match</span> <span class="o">=</span> <span class="n">pattern</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">sample_match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">&quot;docket_date&quot;</span><span class="p">)</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="go">&quot;Dec,1,  2000&quot;</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">decode_date</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">&quot;docket_date&quot;</span><span class="p">))</span> <span class="c1"># use the regex group name</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">decode_date</span><span class="p">(</span><span class="n">sample_match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">&quot;docket_date&quot;</span><span class="p">))</span> <span class="c1"># use the regex group name</span>
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="go">&quot;December 01, 2000&quot;</span>
 </code></pre></div>
   </div>
@@ -684,13 +680,13 @@ constraints of Philippine citations.</p>
       </details>
   </div>
 
-</div><h2 id="pattern">Pattern</h2>
-<h3 id="constraints">Constraints</h3>
+</div><h2 id="regex">Regex</h2>
+<h3 id="purpose">Purpose</h3>
 <p>Intended purpose for date pattern matching in Philippine citations:</p>
 <ol>
-<li>Limits allowed years: <code>1900 - 2299</code></li>
-<li>Limits allowed days: <code>1 - 31</code></li>
-<li>Limits allowed months:<ul>
+<li>Limit allowed years: <code>1900 - 2299</code></li>
+<li>Use regular days: <code>1 - 31</code></li>
+<li>Allowed unorthodox expression of months:<ul>
 <li><code>Jan.</code></li>
 <li><code>Dec.</code></li>
 <li><code>mar</code></li>
@@ -698,11 +694,14 @@ constraints of Philippine citations.</p>
 <li><code>Sept</code></li>
 </ul>
 </li>
-<li>Captures UK format: <code>day month, year</code></li>
-<li>Captures US format: <code>month day, year</code></li>
-<li>Deals with typographic issues, e.g. lacking space <code>Dec1,2000</code></li>
+<li>Captures:<ul>
+<li>UK format: <code>day month, year</code></li>
+<li>US format: <code>month day, year</code></li>
+</ul>
+</li>
+<li>Handle typographic issues, e.g. lacking space <code>Dec1,2000</code></li>
 </ol>
-<h3 id="regex-docket_date">Regex: docket_date</h3>
+<h3 id="docket_date">docket_date</h3>
 <p>This <code>regex</code> string is constructed via <code>docket_date</code></p>
 <div class="highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">citation_date</span> <span class="kn">import</span> <span class="n">docket_date</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span> <span class="nn">pprint</span>
