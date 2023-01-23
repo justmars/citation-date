@@ -283,22 +283,22 @@
       
         <li class="md-nav__item">
   <a href="#nature-as-dependency" class="md-nav__link">
-    Nature as Dependency
+    Nature as dependency
   </a>
   
-    <nav class="md-nav" aria-label="Nature as Dependency">
+    <nav class="md-nav" aria-label="Nature as dependency">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#report" class="md-nav__link">
-    Report
+  <a href="#for-report-based-dates" class="md-nav__link">
+    For report-based dates
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#docket" class="md-nav__link">
-    Docket
+  <a href="#for-docket-based-dates" class="md-nav__link">
+    For docket-based dates
   </a>
   
 </li>
@@ -309,11 +309,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#decode-date" class="md-nav__link">
-    Decode Date
+  <a href="#decoder-api" class="md-nav__link">
+    Decoder API
   </a>
   
-    <nav class="md-nav" aria-label="Decode Date">
+    <nav class="md-nav" aria-label="Decoder API">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -329,11 +329,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#regex" class="md-nav__link">
-    Regex
+  <a href="#regex-string" class="md-nav__link">
+    Regex String
   </a>
   
-    <nav class="md-nav" aria-label="Regex">
+    <nav class="md-nav" aria-label="Regex String">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -400,22 +400,22 @@
       
         <li class="md-nav__item">
   <a href="#nature-as-dependency" class="md-nav__link">
-    Nature as Dependency
+    Nature as dependency
   </a>
   
-    <nav class="md-nav" aria-label="Nature as Dependency">
+    <nav class="md-nav" aria-label="Nature as dependency">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#report" class="md-nav__link">
-    Report
+  <a href="#for-report-based-dates" class="md-nav__link">
+    For report-based dates
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#docket" class="md-nav__link">
-    Docket
+  <a href="#for-docket-based-dates" class="md-nav__link">
+    For docket-based dates
   </a>
   
 </li>
@@ -426,11 +426,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#decode-date" class="md-nav__link">
-    Decode Date
+  <a href="#decoder-api" class="md-nav__link">
+    Decoder API
   </a>
   
-    <nav class="md-nav" aria-label="Decode Date">
+    <nav class="md-nav" aria-label="Decoder API">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -446,11 +446,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#regex" class="md-nav__link">
-    Regex
+  <a href="#regex-string" class="md-nav__link">
+    Regex String
   </a>
   
-    <nav class="md-nav" aria-label="Regex">
+    <nav class="md-nav" aria-label="Regex String">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -493,11 +493,10 @@
 
 <h1 id="citation-date">Citation Date</h1>
 <h2 id="concept">Concept</h2>
-<p>This is a dependency: a regex date formula and decoder for dates referenced in <a href="https://github.com/justmars/citation-report">citation-report</a>; and <a href="https://github.com/justmars/citation-docket">citation-docket</a>. These two libraries are, in turn, dependencies of <a href="https://github.com/justmars/citation-utils">citation-utils</a>. These are intended to parse long-form court decisions and documents that contain Philippine Supreme Court citations.</p>
-<h2 id="nature-as-dependency">Nature as Dependency</h2>
+<p>This is a dependency: a regex date formula and decoder for dates referenced in <a href="https://github.com/justmars/citation-report">citation-report</a>; and <a href="https://github.com/justmars/citation-docket">citation-docket</a>. These two libraries are, in turn, dependencies of <a href="https://github.com/justmars/citation-utils">citation-utils</a>. The <code>citation-</code> libraries are intended to parse long-form court decisions and documents that contain Philippine Supreme Court citations.</p>
+<h2 id="nature-as-dependency">Nature as dependency</h2>
 <p>This is a separate library to make it easier to test regex strings.</p>
-<h3 id="report">Report</h3>
-<p>e.g <code>Report</code> reporters / publishers (e.g. 12 SCRA 141 <code>&lt;date&gt;</code>)</p>
+<h3 id="for-report-based-dates">For report-based dates</h3>
 
 
 <div class="doc doc-object doc-attribute">
@@ -506,8 +505,10 @@
 
   <div class="doc doc-contents first">
   
-      <p>See <code>citation-report</code> library on how the <code>report_date</code> group name
-can be used to fetch matched regex strings</p>
+      <p>An example of a <code>Report</code> (referring to a reporter / publisher citation)
+containing a date is "1 SCRA 200 <code>&lt;date&gt;</code>". See <code>citation-report</code> library on
+how the <code>report_date</code> group name of a matched regex string can be extracted
+from a piece of text.</p>
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><span class="filename">Python Console Session</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">citation_date</span> <span class="kn">import</span> <span class="n">report_date</span><span class="p">,</span> <span class="n">decode_date</span>
@@ -522,8 +523,7 @@ can be used to fetch matched regex strings</p>
 </code></pre></div>
   </div>
 
-</div><h3 id="docket">Docket</h3>
-<p>e.g. <code>Docket</code> numbers (e.g. GR No. 1434121, <code>&lt;date&gt;</code>).</p>
+</div><h3 id="for-docket-based-dates">For docket-based dates</h3>
 
 
 <div class="doc doc-object doc-attribute">
@@ -532,12 +532,9 @@ can be used to fetch matched regex strings</p>
 
   <div class="doc doc-contents first">
   
-      <p>See <code>citation-docket</code> library on how th  <code>docket_date</code> group name
-can be used to fetch matched regex strings</p>
-<ol>
-<li>Date style is combined with docket citation, e.g. "G.R. No. 12345, Dec. 1, 2000"</li>
-<li>Group name in compiled regex pattern : "docket_date"</li>
-</ol>
+      <p>An example of a Docket number containing a date is "G.R. No. 12345, <date>".
+See <code>citation-docket</code> library on how the <code>docket_date</code> group name
+of a matched regex string can be extracted from a piece of text.</p>
 
 <p><strong>Examples:</strong></p>
     <div class="highlight"><span class="filename">Python Console Session</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">citation_date</span> <span class="kn">import</span> <span class="n">docket_date</span>
@@ -552,7 +549,7 @@ can be used to fetch matched regex strings</p>
 </code></pre></div>
   </div>
 
-</div><h2 id="decode-date">Decode Date</h2>
+</div><h2 id="decoder-api">Decoder API</h2>
 <h3 id="decode_date">decode_date()</h3>
 
 
@@ -684,7 +681,7 @@ constraints of Philippine citations.</p>
       </details>
   </div>
 
-</div><h2 id="regex">Regex</h2>
+</div><h2 id="regex-string">Regex String</h2>
 <h3 id="purpose">Purpose</h3>
 <p>Intended purpose for date pattern matching in Philippine citations:</p>
 <ol>
