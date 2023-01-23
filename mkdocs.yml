@@ -29,6 +29,7 @@ nav:
   - index.md
 plugins:
   - mkdocstrings:
+      enable_inventory: true
       handlers:
         python:
           options:
