@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "citation-date"
-version = "0"
+version = "0.1.1"
 description = "Regex date formula and decoder - Philippine Supreme Court Decisions"
 authors = ["Marcelino G. Veloso III <mars@veloso.one>"]
 readme = "README.md"
