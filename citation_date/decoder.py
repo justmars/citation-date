@@ -6,44 +6,6 @@ from re import Match, Pattern
 from dateutil.parser import parse
 
 from .base import day, month, year
-from .base.report import report_date_regex
-from .base.us_uk import docket_date_regex
-
-report_date = report_date_regex
-"""An example of a `Report` (referring to a reporter / publisher citation)
-containing a date is "1 SCRA 200 `<date>`". See `citation-report` library on
-how the `report_date` group name of a matched regex expression can be extracted
-from a piece of text.
-
-Examples:
-    >>> from citation_date import report_date, decode_date
-    >>> import re
-    >>> pattern = re.compile(report_date, re.I | re.X)  # note flags
-    >>> text = "1 SCRA 200 (1Dec.  2000)" # this is what a report looks like
-    >>> sample_match = pattern.search(text)
-    >>> sample_match.group("report_date")
-    "(1Dec.  2000)"
-    >>> decode_date(sample_match.group("report_date")) # use the regex group name
-    "2000-12-01"
-"""
-
-docket_date = docket_date_regex
-"""An example of a Docket number containing a date is "G.R. No. 12345, `<date>`".
-See `citation-docket` library on how the `docket_date` group name
-of a matched regex expression can be extracted from a piece of text.
-
-Examples:
-    >>> from citation_date import docket_date
-    >>> import re
-    >>> pattern = re.compile(docket_date, re.I | re.X)  # note flags
-    >>> text = "G.R. No. 12345, Dec,1,  2000" # this is what a docket looks like
-    >>> sample_match = pattern.search(text)
-    >>> sample_match.group("docket_date")
-    "Dec,1,  2000"
-    >>> decode_date(sample_match.group("docket_date")) # use the regex group name
-    "December 01, 2000"
-"""
-
 
 separator = r"[,\.\s]*"
 

@@ -6,19 +6,27 @@ hide:
 
 ## Concept
 
-This is a dependency: a regex date formula and decoder for dates referenced in [citation-report](https://github.com/justmars/citation-report); and [citation-docket](https://github.com/justmars/citation-docket). These two libraries are, in turn, dependencies of [citation-utils](https://github.com/justmars/citation-utils). The `citation-` libraries are intended to parse long-form court decisions and documents that contain Philippine Supreme Court citations.
+This is a dependency: a regex date formula and decoder for dates referenced in the `Report` of [citation-report](https://github.com/justmars/citation-report); and the `Docket` of [citation-docket](https://github.com/justmars/citation-docket). These two libraries are, in turn, dependencies of [citation-utils](https://github.com/justmars/citation-utils). The `citation-` libraries are intended to parse long-form court decisions and documents that contain Philippine Supreme Court citations.
 
 ## Dependency
 
 This is a separate library to make it easier to test regex strings.
 
-### Report
+### Report Regex
 
-:::citation_date.decoder.report_date
+:::citation_date.REPORT_DATE_REGEX
 
-### Docket
+### Docket Regex
 
-:::citation_date.decoder.docket_date
+:::citation_date.DOCKET_DATE_REGEX
+
+### Docket Date Format
+
+:::citation_date.DOCKET_DATE_FORMAT
+
+### decode_date()
+
+::: citation_date.decoder.decode_date
 
 ## Regex
 
@@ -129,7 +137,3 @@ pprint.pprint(docket_date)
     "    )\n"
 )
 ```
-
-## decode_date() helper
-
-::: citation_date.decoder.decode_date

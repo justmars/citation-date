@@ -34,9 +34,25 @@ parenthesis etc.
 
 dates_pattern = re.compile(report_date_variants, re.X | re.I)
 
-report_date_regex = rf"""
+REPORT_DATE_REGEX = rf"""
     (?P<report_date>
         {covered_year}|
         {report_date_variants}
     )
+"""
+"""An example of a `Report` (referring to a reporter / publisher citation)
+containing a date is "1 SCRA 200 `<date>`". See `citation-report` library on
+how the `report_date` group name of a matched regex expression can be extracted
+from a piece of text.
+
+Examples:
+    >>> from citation_date import REPORT_DATE_REGEX, decode_date
+    >>> import re
+    >>> pattern = re.compile(REPORT_DATE_REGEX, re.I | re.X)  # note flags
+    >>> text = "1 SCRA 200 (1Dec.  2000)" # this is what a report looks like
+    >>> sample_match = pattern.search(text)
+    >>> sample_match.group("report_date")
+    "(1Dec.  2000)"
+    >>> decode_date(sample_match.group("report_date")) # use the regex group name
+    "2000-12-01"
 """
