@@ -1,5 +1,6 @@
-import citation_date
 import toml
+
+import citation_date
 
 
 def test_version():
