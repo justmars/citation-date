@@ -21,6 +21,12 @@ theme:
         name: Switch to light mode
 nav:
   - index.md
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/justmars
+      name: justmars on Github
+copyright: Copyright &copy; Marcelino Veloso III
 plugins:
   - mkdocstrings:
       enable_inventory: true
