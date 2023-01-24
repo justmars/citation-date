@@ -85,10 +85,6 @@
       
     </div>
     
-      <div data-md-component="outdated" hidden>
-        
-      </div>
-    
     
       
 
@@ -283,26 +279,27 @@
     Concept
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dependency" class="md-nav__link">
-    Dependency
-  </a>
-  
-    <nav class="md-nav" aria-label="Dependency">
+    <nav class="md-nav" aria-label="Concept">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#report" class="md-nav__link">
-    Report
+  <a href="#report-regex" class="md-nav__link">
+    Report Regex
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#docket" class="md-nav__link">
-    Docket
+  <a href="#docket-regex" class="md-nav__link">
+    Docket Regex
+  </a>
+  
+    <nav class="md-nav" aria-label="Docket Regex">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#group-name-docket_date" class="md-nav__link">
+    Group Name: docket_date
   </a>
   
 </li>
@@ -311,18 +308,23 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#regex" class="md-nav__link">
-    Regex
+        
+          <li class="md-nav__item">
+  <a href="#docket-date-format" class="md-nav__link">
+    Docket Date Format
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#decode_date-helper" class="md-nav__link">
-    decode_date() helper
+        
+          <li class="md-nav__item">
+  <a href="#decode_date" class="md-nav__link">
+    decode_date()
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -367,26 +369,27 @@
     Concept
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dependency" class="md-nav__link">
-    Dependency
-  </a>
-  
-    <nav class="md-nav" aria-label="Dependency">
+    <nav class="md-nav" aria-label="Concept">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#report" class="md-nav__link">
-    Report
+  <a href="#report-regex" class="md-nav__link">
+    Report Regex
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#docket" class="md-nav__link">
-    Docket
+  <a href="#docket-regex" class="md-nav__link">
+    Docket Regex
+  </a>
+  
+    <nav class="md-nav" aria-label="Docket Regex">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#group-name-docket_date" class="md-nav__link">
+    Group Name: docket_date
   </a>
   
 </li>
@@ -395,18 +398,23 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#regex" class="md-nav__link">
-    Regex
+        
+          <li class="md-nav__item">
+  <a href="#docket-date-format" class="md-nav__link">
+    Docket Date Format
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#decode_date-helper" class="md-nav__link">
-    decode_date() helper
+        
+          <li class="md-nav__item">
+  <a href="#decode_date" class="md-nav__link">
+    decode_date()
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -431,64 +439,7 @@
 
 <h1 id="citation-date">Citation Date</h1>
 <h2 id="concept">Concept</h2>
-<p>This is a dependency: a regex date formula and decoder for dates referenced in <a href="https://github.com/justmars/citation-report">citation-report</a>; and <a href="https://github.com/justmars/citation-docket">citation-docket</a>. These two libraries are, in turn, dependencies of <a href="https://github.com/justmars/citation-utils">citation-utils</a>. The <code>citation-</code> libraries are intended to parse long-form court decisions and documents that contain Philippine Supreme Court citations.</p>
-<h2 id="dependency">Dependency</h2>
-<p>This is a separate library to make it easier to test regex strings.</p>
-<h3 id="report">Report</h3>
-
-
-<div class="doc doc-object doc-attribute">
-
-
-
-  <div class="doc doc-contents first">
-  
-      <p>An example of a <code>Report</code> (referring to a reporter / publisher citation)
-containing a date is "1 SCRA 200 <code>&lt;date&gt;</code>". See <code>citation-report</code> library on
-how the <code>report_date</code> group name of a matched regex expression can be extracted
-from a piece of text.</p>
-
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><span class="filename">Python Console Session</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">citation_date</span> <span class="kn">import</span> <span class="n">report_date</span><span class="p">,</span> <span class="n">decode_date</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">re</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">report_date</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">I</span> <span class="o">|</span> <span class="n">re</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>  <span class="c1"># note flags</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;1 SCRA 200 (1Dec.  2000)&quot;</span> <span class="c1"># this is what a report looks like</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">sample_match</span> <span class="o">=</span> <span class="n">pattern</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">sample_match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">&quot;report_date&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="go">&quot;(1Dec.  2000)&quot;</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">decode_date</span><span class="p">(</span><span class="n">sample_match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">&quot;report_date&quot;</span><span class="p">))</span> <span class="c1"># use the regex group name</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="go">&quot;2000-12-01&quot;</span>
-</code></pre></div>
-  </div>
-
-</div><h3 id="docket">Docket</h3>
-
-
-<div class="doc doc-object doc-attribute">
-
-
-
-  <div class="doc doc-contents first">
-  
-      <p>An example of a Docket number containing a date is "G.R. No. 12345, <code>&lt;date&gt;</code>".
-See <code>citation-docket</code> library on how the <code>docket_date</code> group name
-of a matched regex expression can be extracted from a piece of text.</p>
-
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><span class="filename">Python Console Session</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">citation_date</span> <span class="kn">import</span> <span class="n">docket_date</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">re</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">docket_date</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">I</span> <span class="o">|</span> <span class="n">re</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>  <span class="c1"># note flags</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;G.R. No. 12345, Dec,1,  2000&quot;</span> <span class="c1"># this is what a docket looks like</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">sample_match</span> <span class="o">=</span> <span class="n">pattern</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">sample_match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">&quot;docket_date&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="go">&quot;Dec,1,  2000&quot;</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">decode_date</span><span class="p">(</span><span class="n">sample_match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">&quot;docket_date&quot;</span><span class="p">))</span> <span class="c1"># use the regex group name</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="go">&quot;December 01, 2000&quot;</span>
-</code></pre></div>
-  </div>
-
-</div><h2 id="regex">Regex</h2>
-<p>The intended purpose for this more customized date string matching in Philippine citations is to:</p>
+<p>This is a regex date formula and decoder for dates in Philippine citations based on the following constraints:</p>
 <ol>
 <li>Limit allowed years: <code>1900 - 2299</code></li>
 <li>Use regular days: <code>1 - 31</code></li>
@@ -507,13 +458,69 @@ of a matched regex expression can be extracted from a piece of text.</p>
 </li>
 <li>Handle typographic issues, e.g. lacking space <code>Dec1,2000</code></li>
 </ol>
-<p>This <code>regex</code> string is constructed via the python variable <code>docket_date</code>; note
-that it has the same group name in the regex expression identified by
-<code>(?&lt;docket_date&gt;...)</code></p>
-<div class="highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">citation_date</span> <span class="kn">import</span> <span class="n">docket_date</span>
+<p>This is a dependency (to make it easier to test regex strings) referenced in the <code>Report</code> of <a href="https://github.com/justmars/citation-report">citation-report</a>; and the <code>Docket</code> of <a href="https://github.com/justmars/citation-docket">citation-docket</a>. These two libraries are, in turn, dependencies of <a href="https://github.com/justmars/citation-utils">citation-utils</a>. The <code>citation-</code> libraries are intended to parse long-form court decisions and documents that contain Philippine Supreme Court citations.</p>
+<h3 id="report-regex">Report Regex</h3>
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+  <div class="doc doc-contents first">
+  
+      <p>An example of a <code>Report</code> (referring to a reporter / publisher citation)
+containing a date is "1 SCRA 200 <code>&lt;date&gt;</code>". See <code>citation-report</code> library on
+how the <code>report_date</code> group name of a matched regex expression can be extracted
+from a piece of text.</p>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><span class="filename">Python Console Session</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">citation_date</span> <span class="kn">import</span> <span class="n">REPORT_DATE_REGEX</span><span class="p">,</span> <span class="n">decode_date</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">re</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">REPORT_DATE_REGEX</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">I</span> <span class="o">|</span> <span class="n">re</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>  <span class="c1"># note flags</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;1 SCRA 200 (1Dec.  2000)&quot;</span> <span class="c1"># this is what a report looks like</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">sample_match</span> <span class="o">=</span> <span class="n">pattern</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">sample_match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">&quot;report_date&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="go">&quot;(1Dec.  2000)&quot;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">decode_date</span><span class="p">(</span><span class="n">sample_match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">&quot;report_date&quot;</span><span class="p">))</span> <span class="c1"># use the regex group name</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="go">&quot;2000-12-01&quot;</span>
+</code></pre></div>
+  </div>
+
+</div><h3 id="docket-regex">Docket Regex</h3>
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+  <div class="doc doc-contents first">
+  
+      <p>An example of a Docket number containing a date is "G.R. No. 12345, <code>&lt;date&gt;</code>".
+See <code>citation-docket</code> library on how the <code>docket_date</code> group name
+of a matched regex expression can be extracted from a piece of text.</p>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><span class="filename">Python Console Session</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">citation_date</span> <span class="kn">import</span> <span class="n">DOCKET_DATE_REGEX</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">re</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">DOCKET_DATE_REGEX</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">I</span> <span class="o">|</span> <span class="n">re</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>  <span class="c1"># note flags</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;G.R. No. 12345, Dec,1,  2000&quot;</span> <span class="c1"># this is what a docket looks like</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">sample_match</span> <span class="o">=</span> <span class="n">pattern</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">sample_match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">&quot;docket_date&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="go">&quot;Dec,1,  2000&quot;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">decode_date</span><span class="p">(</span><span class="n">sample_match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">&quot;docket_date&quot;</span><span class="p">))</span> <span class="c1"># use the regex group name</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="go">&quot;December 01, 2000&quot;</span>
+</code></pre></div>
+  </div>
+
+</div><h4 id="group-name-docket_date">Group Name: <code>docket_date</code></h4>
+<p>The regular expression that is constructed will include a group name
+(see <code>(?&lt;docket_date&gt;...)</code>). This means that <code>DOCKET_DATE_REGEX</code> can be combined with
+a future regex expression and when the match occurs for the docket date, that match
+will be accessible through the group name.</p>
+<div class="highlight"><span class="filename">Python</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">citation_date</span> <span class="kn">import</span> <span class="n">DOCKET_DATE_REGEX</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span> <span class="nn">pprint</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">pprint</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">docket_date</span><span class="p">)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">pprint</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">DOCKET_DATE_REGEX</span><span class="p">)</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">(</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="s2">&quot;    (?P&lt;docket_date&gt;</span><span class="se">\n</span><span class="s2">&quot;</span>
@@ -597,7 +604,20 @@ that it has the same group name in the regex expression identified by
 <a id="__codelineno-0-85" name="__codelineno-0-85" href="#__codelineno-0-85"></a>    <span class="s2">&quot;    )</span><span class="se">\n</span><span class="s2">&quot;</span>
 <a id="__codelineno-0-86" name="__codelineno-0-86" href="#__codelineno-0-86"></a><span class="p">)</span>
 </code></pre></div>
-<h2 id="decode_date-helper">decode_date() helper</h2>
+<h3 id="docket-date-format">Docket Date Format</h3>
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+  <div class="doc doc-contents first">
+  
+      <p>Utilizes a uniform docket format of <code>%b. %d, %Y</code>, e.g. Jan. 2, 1994, for dates to
+be usable downstream.</p>
+  </div>
+
+</div><h3 id="decode_date">decode_date()</h3>
 
 
 <div class="doc doc-object doc-function">
@@ -675,61 +695,61 @@ constraints of Philippine citations.</p>
 
       <details class="quote">
         <summary>Source code in <code>citation_date/decoder.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-123">123</a></span>
-<span class="normal"><a href="#__codelineno-0-124">124</a></span>
-<span class="normal"><a href="#__codelineno-0-125">125</a></span>
-<span class="normal"><a href="#__codelineno-0-126">126</a></span>
-<span class="normal"><a href="#__codelineno-0-127">127</a></span>
-<span class="normal"><a href="#__codelineno-0-128">128</a></span>
-<span class="normal"><a href="#__codelineno-0-129">129</a></span>
-<span class="normal"><a href="#__codelineno-0-130">130</a></span>
-<span class="normal"><a href="#__codelineno-0-131">131</a></span>
-<span class="normal"><a href="#__codelineno-0-132">132</a></span>
-<span class="normal"><a href="#__codelineno-0-133">133</a></span>
-<span class="normal"><a href="#__codelineno-0-134">134</a></span>
-<span class="normal"><a href="#__codelineno-0-135">135</a></span>
-<span class="normal"><a href="#__codelineno-0-136">136</a></span>
-<span class="normal"><a href="#__codelineno-0-137">137</a></span>
-<span class="normal"><a href="#__codelineno-0-138">138</a></span>
-<span class="normal"><a href="#__codelineno-0-139">139</a></span>
-<span class="normal"><a href="#__codelineno-0-140">140</a></span>
-<span class="normal"><a href="#__codelineno-0-141">141</a></span>
-<span class="normal"><a href="#__codelineno-0-142">142</a></span>
-<span class="normal"><a href="#__codelineno-0-143">143</a></span>
-<span class="normal"><a href="#__codelineno-0-144">144</a></span>
-<span class="normal"><a href="#__codelineno-0-145">145</a></span>
-<span class="normal"><a href="#__codelineno-0-146">146</a></span>
-<span class="normal"><a href="#__codelineno-0-147">147</a></span>
-<span class="normal"><a href="#__codelineno-0-148">148</a></span>
-<span class="normal"><a href="#__codelineno-0-149">149</a></span>
-<span class="normal"><a href="#__codelineno-0-150">150</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-123" name="__codelineno-0-123"></a><span class="k">def</span> <span class="nf">decode_date</span><span class="p">(</span>
-<a id="__codelineno-0-124" name="__codelineno-0-124"></a>    <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">is_output_date_object</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
-<a id="__codelineno-0-125" name="__codelineno-0-125"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">date</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
-<a id="__codelineno-0-126" name="__codelineno-0-126"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Given a piece of text, extract the date found using the specific</span>
-<a id="__codelineno-0-127" name="__codelineno-0-127"></a><span class="sd">    constraints of Philippine citations.</span>
-<a id="__codelineno-0-128" name="__codelineno-0-128"></a>
-<a id="__codelineno-0-129" name="__codelineno-0-129"></a><span class="sd">    Examples:</span>
-<a id="__codelineno-0-130" name="__codelineno-0-130"></a><span class="sd">        &gt;&gt;&gt; text =  &quot;G.R. No. 12345, Dec,1,  2000&quot;</span>
-<a id="__codelineno-0-131" name="__codelineno-0-131"></a><span class="sd">        &gt;&gt;&gt; decode_date(text)</span>
-<a id="__codelineno-0-132" name="__codelineno-0-132"></a><span class="sd">        &#39;December 01, 2000&#39;</span>
-<a id="__codelineno-0-133" name="__codelineno-0-133"></a><span class="sd">        &gt;&gt;&gt; text1 = &quot;The date is (april29,2001)&quot;</span>
-<a id="__codelineno-0-134" name="__codelineno-0-134"></a><span class="sd">        &gt;&gt;&gt; decode_date(text1)</span>
-<a id="__codelineno-0-135" name="__codelineno-0-135"></a><span class="sd">        &#39;April 29, 2001&#39;</span>
-<a id="__codelineno-0-136" name="__codelineno-0-136"></a><span class="sd">        &gt;&gt;&gt; decode_date(text1, is_output_date_object=True)</span>
-<a id="__codelineno-0-137" name="__codelineno-0-137"></a><span class="sd">        datetime.date(2001, 4, 29)</span>
-<a id="__codelineno-0-138" name="__codelineno-0-138"></a>
-<a id="__codelineno-0-139" name="__codelineno-0-139"></a><span class="sd">    Args:</span>
-<a id="__codelineno-0-140" name="__codelineno-0-140"></a><span class="sd">        text (str): Presumably a date string</span>
-<a id="__codelineno-0-141" name="__codelineno-0-141"></a><span class="sd">        is_output_date_object (bool, optional): If True, the return is a</span>
-<a id="__codelineno-0-142" name="__codelineno-0-142"></a><span class="sd">            `datetime.date` object. Defaults to False.</span>
-<a id="__codelineno-0-143" name="__codelineno-0-143"></a>
-<a id="__codelineno-0-144" name="__codelineno-0-144"></a><span class="sd">    Returns:</span>
-<a id="__codelineno-0-145" name="__codelineno-0-145"></a><span class="sd">        str | date | None: The decoded text as a date, if it exists.</span>
-<a id="__codelineno-0-146" name="__codelineno-0-146"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-147" name="__codelineno-0-147"></a>    <span class="n">obj</span> <span class="o">=</span> <span class="n">DatedText</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-<a id="__codelineno-0-148" name="__codelineno-0-148"></a>    <span class="k">if</span> <span class="n">is_output_date_object</span><span class="p">:</span>
-<a id="__codelineno-0-149" name="__codelineno-0-149"></a>        <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">as_date</span>
-<a id="__codelineno-0-150" name="__codelineno-0-150"></a>    <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">as_string</span>
+        <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-85"> 85</a></span>
+<span class="normal"><a href="#__codelineno-0-86"> 86</a></span>
+<span class="normal"><a href="#__codelineno-0-87"> 87</a></span>
+<span class="normal"><a href="#__codelineno-0-88"> 88</a></span>
+<span class="normal"><a href="#__codelineno-0-89"> 89</a></span>
+<span class="normal"><a href="#__codelineno-0-90"> 90</a></span>
+<span class="normal"><a href="#__codelineno-0-91"> 91</a></span>
+<span class="normal"><a href="#__codelineno-0-92"> 92</a></span>
+<span class="normal"><a href="#__codelineno-0-93"> 93</a></span>
+<span class="normal"><a href="#__codelineno-0-94"> 94</a></span>
+<span class="normal"><a href="#__codelineno-0-95"> 95</a></span>
+<span class="normal"><a href="#__codelineno-0-96"> 96</a></span>
+<span class="normal"><a href="#__codelineno-0-97"> 97</a></span>
+<span class="normal"><a href="#__codelineno-0-98"> 98</a></span>
+<span class="normal"><a href="#__codelineno-0-99"> 99</a></span>
+<span class="normal"><a href="#__codelineno-0-100">100</a></span>
+<span class="normal"><a href="#__codelineno-0-101">101</a></span>
+<span class="normal"><a href="#__codelineno-0-102">102</a></span>
+<span class="normal"><a href="#__codelineno-0-103">103</a></span>
+<span class="normal"><a href="#__codelineno-0-104">104</a></span>
+<span class="normal"><a href="#__codelineno-0-105">105</a></span>
+<span class="normal"><a href="#__codelineno-0-106">106</a></span>
+<span class="normal"><a href="#__codelineno-0-107">107</a></span>
+<span class="normal"><a href="#__codelineno-0-108">108</a></span>
+<span class="normal"><a href="#__codelineno-0-109">109</a></span>
+<span class="normal"><a href="#__codelineno-0-110">110</a></span>
+<span class="normal"><a href="#__codelineno-0-111">111</a></span>
+<span class="normal"><a href="#__codelineno-0-112">112</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-85" name="__codelineno-0-85"></a><span class="k">def</span> <span class="nf">decode_date</span><span class="p">(</span>
+<a id="__codelineno-0-86" name="__codelineno-0-86"></a>    <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">is_output_date_object</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+<a id="__codelineno-0-87" name="__codelineno-0-87"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">date</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-88" name="__codelineno-0-88"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Given a piece of text, extract the date found using the specific</span>
+<a id="__codelineno-0-89" name="__codelineno-0-89"></a><span class="sd">    constraints of Philippine citations.</span>
+<a id="__codelineno-0-90" name="__codelineno-0-90"></a>
+<a id="__codelineno-0-91" name="__codelineno-0-91"></a><span class="sd">    Examples:</span>
+<a id="__codelineno-0-92" name="__codelineno-0-92"></a><span class="sd">        &gt;&gt;&gt; text =  &quot;G.R. No. 12345, Dec,1,  2000&quot;</span>
+<a id="__codelineno-0-93" name="__codelineno-0-93"></a><span class="sd">        &gt;&gt;&gt; decode_date(text)</span>
+<a id="__codelineno-0-94" name="__codelineno-0-94"></a><span class="sd">        &#39;December 01, 2000&#39;</span>
+<a id="__codelineno-0-95" name="__codelineno-0-95"></a><span class="sd">        &gt;&gt;&gt; text1 = &quot;The date is (april29,2001)&quot;</span>
+<a id="__codelineno-0-96" name="__codelineno-0-96"></a><span class="sd">        &gt;&gt;&gt; decode_date(text1)</span>
+<a id="__codelineno-0-97" name="__codelineno-0-97"></a><span class="sd">        &#39;April 29, 2001&#39;</span>
+<a id="__codelineno-0-98" name="__codelineno-0-98"></a><span class="sd">        &gt;&gt;&gt; decode_date(text1, is_output_date_object=True)</span>
+<a id="__codelineno-0-99" name="__codelineno-0-99"></a><span class="sd">        datetime.date(2001, 4, 29)</span>
+<a id="__codelineno-0-100" name="__codelineno-0-100"></a>
+<a id="__codelineno-0-101" name="__codelineno-0-101"></a><span class="sd">    Args:</span>
+<a id="__codelineno-0-102" name="__codelineno-0-102"></a><span class="sd">        text (str): Presumably a date string</span>
+<a id="__codelineno-0-103" name="__codelineno-0-103"></a><span class="sd">        is_output_date_object (bool, optional): If True, the return is a</span>
+<a id="__codelineno-0-104" name="__codelineno-0-104"></a><span class="sd">            `datetime.date` object. Defaults to False.</span>
+<a id="__codelineno-0-105" name="__codelineno-0-105"></a>
+<a id="__codelineno-0-106" name="__codelineno-0-106"></a><span class="sd">    Returns:</span>
+<a id="__codelineno-0-107" name="__codelineno-0-107"></a><span class="sd">        str | date | None: The decoded text as a date, if it exists.</span>
+<a id="__codelineno-0-108" name="__codelineno-0-108"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-109" name="__codelineno-0-109"></a>    <span class="n">obj</span> <span class="o">=</span> <span class="n">DatedText</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<a id="__codelineno-0-110" name="__codelineno-0-110"></a>    <span class="k">if</span> <span class="n">is_output_date_object</span><span class="p">:</span>
+<a id="__codelineno-0-111" name="__codelineno-0-111"></a>        <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">as_date</span>
+<a id="__codelineno-0-112" name="__codelineno-0-112"></a>    <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">as_string</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>
@@ -774,7 +794,7 @@ constraints of Philippine citations.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="assets/javascripts/bundle.51d95adb.min.js"></script>
