@@ -1,5 +1,3 @@
-__version__ = "0.1.1"
-
 from .day import day
 from .month import month
 from .report import REPORT_DATE_REGEX

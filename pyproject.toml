@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "citation-date"
-version = "0.1.1"
+version = "0.1.2"
 description = "Regex date formula and decoder - Philippine Supreme Court Decisions"
 authors = ["Marcelino G. Veloso III <mars@veloso.one>"]
 readme = "README.md"
@@ -28,7 +28,7 @@ pytest-cov = "^2.12.1"
 pre-commit = "^2.21"
 mkdocs = "^1.4.2"
 mkdocstrings = { extras = ["python"], version = "^0.20.0" }
-mkdocs-material = "^9.0.6"
+mkdocs-material = "^9.0.13"
 
 [tool.pytest]
 minversion = "7.2"
