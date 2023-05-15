@@ -36,7 +36,7 @@ addopts = "-ra -q --cov --doctest-modules"
 filterwarnings = [
   "ignore::DeprecationWarning", # DeprecationWarning: pkg_resources is deprecated as an API
 ]
-testpaths = ["tests", "ciation_date"]
+testpaths = ["tests", "citation_date"]
 
 [tool.pytest]
 minversion = "7.2"
