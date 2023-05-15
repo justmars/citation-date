@@ -14,7 +14,7 @@ Checkout code, create a new virtual environment:
 
 ```sh
 poetry add citation-date # python -m pip install citation-date
-poetry update # install dependencies
+poetry install # install dependencies
 poetry shell
 ```
 
