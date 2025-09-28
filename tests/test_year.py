@@ -1,5 +1,4 @@
 import pytest
-
 from src.base.year import year_pattern
 
 

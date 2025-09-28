@@ -1,5 +1,4 @@
 import pytest
-
 from src.base.month import month_pattern
 
 

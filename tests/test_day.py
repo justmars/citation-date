@@ -1,5 +1,4 @@
 import pytest
-
 from src.base.day import day_pattern
 
 

@@ -82,9 +82,7 @@ class DatedText:
         return None
 
 
-def decode_date(
-    text: str, is_output_date_object: bool = False
-) -> str | date | None:
+def decode_date(text: str, is_output_date_object: bool = False) -> str | date | None:
     """Given a piece of text, extract the date found using the specific
     constraints of Philippine citations.
 
