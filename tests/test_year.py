@@ -1,6 +1,6 @@
 import pytest
 
-from src import year_pattern
+from citation_date import year_pattern
 
 
 @pytest.mark.parametrize(

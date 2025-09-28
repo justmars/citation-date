@@ -1,6 +1,6 @@
 import pytest
 
-from src import month_pattern
+from citation_date import month_pattern
 
 
 @pytest.mark.parametrize(

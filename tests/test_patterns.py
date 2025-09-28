@@ -1,6 +1,6 @@
 import re
 
-from src import DOCKET_DATE_REGEX, REPORT_DATE_REGEX, DatedText, decode_date
+from citation_date import DOCKET_DATE_REGEX, REPORT_DATE_REGEX, DatedText, decode_date
 
 
 def test_docket():

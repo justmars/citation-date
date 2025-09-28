@@ -1,6 +1,6 @@
 import pytest
 
-from src import uk_pattern, us_pattern
+from citation_date import uk_pattern, us_pattern
 
 
 @pytest.mark.parametrize(
