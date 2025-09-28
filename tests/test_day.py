@@ -1,6 +1,6 @@
 import pytest
 
-from citation_date.base.day import day_pattern
+from src.base.day import day_pattern
 
 
 @pytest.mark.parametrize("count", [1, 5, "03", 30, 31])

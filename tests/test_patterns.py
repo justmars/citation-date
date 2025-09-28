@@ -1,6 +1,6 @@
 import re
 
-from citation_date import (
+from src import (
     DOCKET_DATE_REGEX,
     REPORT_DATE_REGEX,
     DatedText,

@@ -25,13 +25,6 @@ theme:
         name: Switch to light mode
 nav:
   - index.md
-  - api-match.md
-  - api-extract.md
-  - Rule API:
-    - api-rule.md
-    - api-rule-serial.md
-    - api-rule-named.md
-    - api-rule-base.md
 extra:
   homepage: https://mv3.dev
   social:
@@ -43,7 +36,6 @@ extra:
       name: mv on Mastodon
 copyright: Copyright &copy; Marcelino Veloso III
 plugins:
-  - autorefs
   - mkdocstrings:
       handlers:
         python:
@@ -52,6 +44,9 @@ plugins:
             show_category_heading: true
             show_source: true
             heading_level: 3
+            inherited_members: true # added
+            extra:
+              crossref: true   # <-- move crossref here
   - search:
       lang: en
 markdown_extensions:
@@ -72,13 +67,11 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
-  - pymdownx.tabbed:
-      alternate_style: true
+          format: pymdownx.superfences.fence_code_format

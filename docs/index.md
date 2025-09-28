@@ -25,11 +25,11 @@ This is a dependency (to make it easier to test regex strings) referenced in the
 
 ### Report Regex
 
-:::citation_date.REPORT_DATE_REGEX
+::: src.REPORT_DATE_REGEX
 
 ### Docket Regex
 
-:::citation_date.DOCKET_DATE_REGEX
+::: src.DOCKET_DATE_REGEX
 
 #### Group Name: `docket_date`
 
@@ -129,8 +129,8 @@ pprint.pprint(DOCKET_DATE_REGEX)
 
 ### Docket Date Format
 
-:::citation_date.DOCKET_DATE_FORMAT
+::: src.DOCKET_DATE_FORMAT
 
 ### decode_date()
 
-::: citation_date.decoder.decode_date
+::: src.decoder.decode_date

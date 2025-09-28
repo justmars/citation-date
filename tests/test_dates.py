@@ -1,7 +1,7 @@
 import pytest
 
-from citation_date.base.report import dates_pattern
-from citation_date.decoder import decode_date
+from src.base.report import dates_pattern
+from src.decoder import decode_date
 
 
 @pytest.mark.parametrize(

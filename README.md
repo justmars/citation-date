@@ -7,19 +7,3 @@ Regex date formula and decoder, eventually used by the dataset employed in [LawS
 ## Documentation
 
 See [documentation](https://justmars.github.io/citation-date).
-
-## Development
-
-Checkout code, create a new virtual environment:
-
-```sh
-poetry add citation-date # python -m pip install citation-date
-poetry install # install dependencies
-poetry shell
-```
-
-Run tests:
-
-```sh
-pytest
-```
