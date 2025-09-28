@@ -1,7 +1,7 @@
 import re
 
+from .date_year import covered_year
 from .us_uk import uk, us
-from .year import covered_year
 
 date = rf"{us}|{uk}"
 

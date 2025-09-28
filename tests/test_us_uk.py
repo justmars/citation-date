@@ -1,6 +1,6 @@
 import pytest
 
-from src.base.us_uk import uk_pattern, us_pattern
+from src import uk_pattern, us_pattern
 
 
 @pytest.mark.parametrize(

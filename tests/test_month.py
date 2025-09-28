@@ -1,5 +1,6 @@
 import pytest
-from src.base.month import month_pattern
+
+from src import month_pattern
 
 
 @pytest.mark.parametrize(
