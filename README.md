@@ -20,8 +20,10 @@ The library is designed to:
 
 #### US/UK Date Patterns
 
+```py
 us = rf"({month}{separator}{day}{separator}{year})"
 uk = rf"({day}{separator}{month}{separator}{year})"
+```
 
 These patterns detect date-like strings and account for common separators.
 
